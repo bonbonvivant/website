@@ -1,0 +1,628 @@
+<style>
+    .header-wrap {
+    position: fixed;
+    top: 0em;
+    left: 0em;
+    right: 0em;
+    z-index: 12
+}
+
+@media(min-width: 576px) {
+    .header-wrap {
+        top:0em;
+        left: 0em;
+        right: 0em
+    }
+}
+
+@media(min-width: 768px) {
+    .header-wrap {
+        top:0em;
+        left: 0em;
+        right: 0em
+    }
+}
+
+.submenu-open .header-wrap {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+    overflow-y: auto
+}
+
+@media(min-width: 576px) {
+    .submenu-open .header-wrap {
+        padding:0
+    }
+}
+
+@media(min-width: 768px) {
+    .submenu-open .header-wrap {
+        padding:0
+    }
+}
+
+.header-wrap__header-nav {
+    position: relative;
+    z-index: 3;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding-bottom: .1875em;
+    background-color: #5391b0
+}
+
+.submenu-open .header-wrap__header-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0
+}
+
+@media(min-width: 576px) {
+    .submenu-open .header-wrap__header-nav {
+        top:0;
+        left: 0;
+        right: 0
+    }
+}
+
+@media(min-width: 768px) {
+    .submenu-open .header-wrap__header-nav {
+        top:0;
+        left: 0;
+        right: 0
+    }
+}
+
+@media(min-width: 576px) {
+    .header-wrap__header-nav {
+        padding-bottom:0em
+    }
+}
+
+@media(min-width: 768px) {
+    .header-wrap__header-nav {
+        padding-bottom:0em
+    }
+
+    .header-wrap__header-nav::after {
+        height: .5em
+    }
+}
+
+a.logo {
+    display: inline-block
+}
+
+a.logo img {
+    display: block;
+    width: calc(100% - 68px);
+    margin-left: 1.5%;
+    margin-right: auto;
+    padding-top: 20px
+}
+
+@media(min-width: 576px) {
+    a.logo img {
+        display:block;
+        width: unset;
+        max-height: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: unset
+    }
+}
+
+.header-wrap a.logo {
+    position: relative;
+    z-index: 2;
+    display: block;
+    font-size: 1em;
+    padding: .3125em .5em
+}
+
+@media(min-width: 576px) {
+    .header-wrap a.logo {
+        padding:.4em .65em
+    }
+}
+
+@media(min-width: 768px) {
+    .header-wrap a.logo {
+        padding:20px 0 20px 1.5%;
+        min-width: 21.75em
+    }
+}
+
+.date-now {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+    margin: 0 .75em;
+    color: #73a0fd;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.05em;
+    text-transform: lowercase;
+    text-align: center
+}
+
+@media(min-width: 992px) {
+    .date-now {
+        -webkit-box-flex:0;
+        -webkit-flex: 0 1 auto;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+        margin: 0 1.5em
+    }
+}
+
+@media(min-width: 1200px) {
+    .date-now {
+        -webkit-box-flex:0;
+        -webkit-flex: 0 1 auto;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+        min-width: 10em;
+        margin: 0 1.5em;
+        text-align: left
+    }
+}
+
+.navigation {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 13px 0;
+    z-index: -9;
+    text-align: center;
+    background-color: #5391b0;
+    visibility: hidden;
+    opacity: 0;
+    margin-top: -0.625em;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s
+}
+
+.navigation.active {
+    z-index: 2;
+    visibility: visible;
+    opacity: 1;
+    margin-top: 1px
+}
+
+.navigation li {
+    margin: .25em 0;
+    padding-left: 1.07143em;
+    padding-right: 1.07143em;
+    text-align: center
+}
+
+.navigation li>a {
+    display: inline-block;
+    color: #fdec12;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: .07143em;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    -webkit-transition: opacity .25s;
+    -o-transition: opacity .25s;
+    transition: opacity .25s
+}
+
+.navigation li>a:hover {
+    text-decoration: none
+}
+
+.submenu-open .navigation li>a {
+    opacity: 1
+}
+
+.submenu-open .navigation li>a.active {
+    opacity: 1;
+    color: #ecdec3;
+    -webkit-text-stroke: .02em #fdec12
+}
+
+.navigation a.btn {
+    margin: .57143em 1.42857em 0
+}
+
+@media(min-width: 768px) {
+    .navigation {
+        position:static;
+        z-index: auto;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        margin-top: 0;
+        text-align: left;
+        background-color: transparent;
+        border: 0;
+        visibility: visible;
+        opacity: 1;
+        -webkit-transition: all 0s ease 0s;
+        -o-transition: all 0s ease 0s;
+        transition: all 0s ease 0s
+    }
+
+    .navigation ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: -9;
+        padding: .6em 0 .5em;
+        text-align: center;
+        background-color: #5391b0;
+        -webkit-transition: all .2s;
+        -o-transition: all .2s;
+        transition: all .2s;
+        visibility: hidden;
+        opacity: 0;
+        margin-top: -0.5em
+    }
+
+    .navigation.active {
+        z-index: auto;
+        margin-top: 0
+    }
+
+    .navigation.active ul {
+        z-index: 2;
+        visibility: visible;
+        opacity: 1;
+        margin-top: 0
+    }
+
+    .navigation li {
+        margin: 0 13px;
+        padding-left: .5em;
+        padding-right: .5em
+    }
+
+    .navigation a.btn {
+        margin: auto 2.3% 0 24px
+    }
+}
+
+@media(min-width: 1200px) {
+    .navigation {
+        -webkit-box-flex:1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1
+    }
+
+    .navigation ul {
+        position: static;
+        z-index: auto;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: right;
+        -ms-flex-pack: center;
+        justify-content: right;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        height: 100%;
+        margin-top: 0;
+        padding: 0;
+        text-align: left;
+        background-color: transparent;
+        border: 0;
+        visibility: visible;
+        opacity: 1;
+        -webkit-transition: all 0s ease 0s;
+        -o-transition: all 0s ease 0s;
+        transition: all 0s ease 0s
+    }
+
+    .navigation.active ul {
+        margin-top: 0
+    }
+
+    .navigation li {
+        padding-left: 0;
+        padding-right: 0;
+        text-align: left
+    }
+
+    .navigation li {
+        margin: 0 13px
+    }
+}
+
+
+</style>
+
+<header class="header-wrap">
+
+	<!-- BEGIN Header Navigation -->
+	<div class="header-wrap__header-nav">
+		<a href="/" class="logo">
+			<img src="https://github.com/boyanq/meadows-theme/blob/main/logo-2024.png?raw=true" alt="Logo">
+		</a>
+		<!-- Hidden mobile-cta-button
+		<a class="mobile-cta-button d-md-none date-now" href="https://meadowsinthemountains.myeasol.com/shop/meadows-in-the-mountains-2023">BOOK NOW</a>
+		 -->
+		<nav class="navigation">
+		    <ul>
+		        <li><a data-submenu="sub1" class="js-submenu-open" href="#">Explore</a></li>
+		        <li><a data-submenu="sub2" class="js-submenu-open" href="#">Plan</a></li>
+		        <li><a data-submenu="sub3" class="js-submenu-open" href="#">Activism</a></li>
+		    </ul>
+
+			<a href="/meadows-in-the-mountains-2025-announcement" class="btn" target="_self">
+				<span>Book now</span>
+			</a>
+		</nav>
+
+		<!-- BEGIN Button Mobile Menu -->
+		<button type="button" class="btn-menu btn-menu--closed">
+			<svg
+			   xmlns:dc="http://purl.org/dc/elements/1.1/"
+			   xmlns:cc="http://creativecommons.org/ns#"
+			   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+			   xmlns:svg="http://www.w3.org/2000/svg"
+			   xmlns="http://www.w3.org/2000/svg"
+			   viewBox="0 0 360 211.99998"
+			   id="icon__btn-menu__menu-open"
+			   version="1.1">
+			  <defs
+			     id="defs74" />
+			  <path
+			     id="path80"
+			     d="m 0,190.66665 v -21.33333 h 179.99999 180 v 21.33333 21.33334 h -180 H 0 Z M 0,105.99999 V 85.33333 h 179.99999 180 v 20.66666 20.66667 h -180 H 0 Z M 0,21.33333 V 0 h 179.99999 180 v 21.33333 21.33333 h -180 H 0 Z" />
+			</svg>
+			<svg
+			   xmlns:dc="http://purl.org/dc/elements/1.1/"
+			   xmlns:cc="http://creativecommons.org/ns#"
+			   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+			   xmlns:svg="http://www.w3.org/2000/svg"
+			   xmlns="http://www.w3.org/2000/svg"
+			   viewBox="0 0 613.99512 614.64966"
+			   id="icon__btn-menu__menu-close"
+			   version="1.1">
+			  <defs
+			     id="defs6" />
+			  <path
+			     id="path3682"
+			     d="M 18.33088,595.66423 0,577.33334 134.99935,442.32908 269.9987,307.32482 134.99935,172.32057 0,37.316299 18.33088,18.985417 36.66176,0.654534 171.66603,135.65389 306.67028,270.65324 442.00182,135.32662 577.33336,0 595.66423,18.33087 613.99511,36.661739 478.66849,171.99329 343.34187,307.32482 478.66849,442.65636 613.99511,577.9879 595.66423,596.31877 577.33336,614.64965 442.00182,479.32303 306.67028,343.99641 171.66603,478.99576 36.66176,613.99512 Z" />
+			</svg>
+		</button>
+
+		<span class="btn-submenu-close">
+			<span class="js-submenu-close"></span>
+		</span>
+		<!-- END Button Mobile Menu -->
+
+	</div>
+	<!-- END Header Navigation -->
+
+	<!-- BEGIN Header Submenu -->
+	<div class="header-wrap__header-submenu">
+		<div data-menu="sub1" class="header-submenu-item">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-sm-6 col-lg-3 col-xl-3">
+						<span class="header-submenu__icon-box">
+							<div style="background-image: url('https://github.com/boyanq/meadows-theme/blob/main/plants-1.png?raw=true')"></div>
+						</span>
+						
+						<h6>This is meadows</h6>
+						<ul>
+							<li><a href="/vision">Our Vision</a></li>
+							<li><a href="/principles">Our Principles</a></li><!-- Hide subitems looks better
+							<li><a href="/principles#ONE_WITH_NATURE">1. Nature</a></li>
+							<li><a href="/principles#REGENERATION_FROM_THE_GROUND_UP">2. Regenerative Culture</a></li>
+							<li><a href="/principles#COMMUNITY_LIKE_FAMILY">3. Family & Community</a></li>
+							<li><a href="/principles#PRICELESS_INTIMACY">4. Intimacy</a></li>
+							<li><a href="/principles#A_CANVAS_FOR_CREATIVITY">5. Creativity</a></li>
+							<li><a href="/principles#OUR_CONSCIOUS_CEREMONY">6. Spirituality & Consciousness</a></li>-->
+							<li><a href="/about">Story of a Decade</a></li>
+							<li><a href="/reviews">What They Say</a></li>
+							<li><a href="/merch">Merch</a></li>
+						</ul>
+					</div>
+
+					<div class="col-sm-6 col-lg-3 col-xl-3">
+						<span class="header-submenu__icon-box">
+							<div style="background-image: url('https://github.com/boyanq/meadows-theme/blob/main/speaker-4.png?raw=true')"></div>
+						</span>
+						
+						<h6><a href="/happenings">Happenings</a></h6>
+						<div class="row">
+							<div class="col-sm-6">
+								<ul>
+								    <li><a href="/happenings#Mesa_-_Our_Spiritual_Home">Mesa</a></li>
+								    <li><a href="/happenings#The_Art_Comes_Naturally">Art</a></li>
+								    <li><a href="/happenings#Real_Music_to_Your_Ears">Music</a></li>
+								    <li><a href="/happenings#Meet_Our_Taste_Buddies">Food & Drink</a></li>
+								    <li><a href="/happenings#Mounting_Creativity">Mummar Mountain</a></li><!-- hide afters
+								    <li><a href="/happenings#Meadowers_After_the_Mountains">Afters</a></li>-->
+								</ul>
+							</div>
+						</div>
+
+					</div>
+					<div class="col-sm-6 col-lg-3 col-xl-3">
+						<span class="header-submenu__icon-box">
+							<div style="background-image: url('https://github.com/boyanq/meadows-theme/blob/main/mounatin-1.png?raw=true')"></div>
+						</span>
+						
+						<h6><a href="/our-mountain">Our mountain</a></h6>
+						<ul>
+							<li><a class="sublink-menu" href="/our-mountain#ALL_AROUND_TOWN">Village</a></li>
+							<li><a class="sublink-menu" href="/our-mountain#THE_VILLAGE_THAT_RAISED_OUR_FESTIVAL">Community</a></li>
+							<li><a class="sublink-menu" href="/our-mountain#BULGARIA_DELIVERS_MAGIC_IN_BULK">Culture</a></li>
+							<li><a class="sublink-menu" href="/our-mountain#HOW_TO_MEADOW">Awareness Guidelines</a></li>
+							<li><a class="sublink-menu" href="/our-mountain#WELFARE">Welfare</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-6 col-lg-3 col-xl-3">
+						<span class="header-submenu__icon-box">
+							<div style="background-image: url('https://github.com/boyanq/meadows-theme/blob/main/eye-experience-1.png?raw=true')"></div>
+						</span>
+						
+						<!-- TEMP FOR LAUNCH -->
+						<h6>2011-2023</h6>
+						<ul>
+							<li><a href="/posters">Posters</a></li>
+							<li><a href="/gallery">Gallery</a></li>
+						</ul>
+						
+						<!-- HIDE FOR LAUNCH
+						<h6><a href="/previous-years">Past editions</a></h6>
+						<ul>
+							<li><a href="/previous-years">Photos</a></li>
+							<li><a href="/previous-years">Film</a></li>
+						</ul>
+						-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div data-menu="sub2" class="header-submenu-item">
+			<div class="container">
+				<div class="row">
+					<!-- Hidden	
+					<div class="col-sm-6 col-lg-3 col-xl-3">
+						<span class="header-submenu__icon-box">
+							<div style="background-image: url('https://github.com/boyanq/meadows-theme/blob/main/tickets-submenu.png?raw=true')"></div>
+						</span>
+						<h6><a class="sublink-menu" href="/tickets">tickets</a></h6>
+						<ul>
+							<li><a class="sublink-menu" href="/shop/meadows-in-the-mountains-2023">Book Now</a></li>
+							<li><a class="sublink-menu" href="/book#group">group discounts</a></li>
+							<li><a href="/book#tickets">packages</a></li>
+						</ul>
+					</div>
+					-->
+					<div class="col-sm-6 col-lg-3 col-xl-3">
+						<span class="header-submenu__icon-box">
+							<div style="background-image: url('https://github.com/boyanq/meadows-theme/blob/main/accommodation-submenu.png?raw=true')"></div>
+						</span>
+						<h6><a class="sublink-menu" href="/accommodation">Mountain Living</a></h6>
+						<ul>
+							<li><a class="sublink-menu" href="/wild-camping">Wild Camping</a></li>
+							<li><a class="sublink-menu" href="/products/tentsile-forest-24b64dd3-02b4-4167-a218-8ed720af9431">Tentsile Forest</a></li>
+							<li><a class="sublink-menu" href="/products/4-person-bell-tent">Bell Tents</a></li>
+							<!-- <li><a class="sublink-menu" href="/book#mountain-living">Balkan village</a></li> -->
+							<li><a class="sublink-menu" href="/products/2-person-pre-pitched-tent-71c2481d-a31c-4357-aeaa-faff11ba42dc">Pre-pitched Tents</a></li>
+							<li><a class="sublink-menu" href="/village-homes">Village Homes</a></li>
+						</ul>
+					</div>
+
+					<div class="col-sm-6 col-lg-3 col-xl-3">
+						<span class="header-submenu__icon-box">
+							<div style="background-image: url('https://github.com/boyanq/meadows-theme/blob/main/transport-submenu.png?raw=true')"></div>
+						</span>
+						<h6><a class="sublink-menu" href="/transfers">Getting Here</a></h6>
+						<ul>
+							<li><a class="sublink-menu" href="/train">Train Not Plane</a></li>
+							<li><a class="sublink-menu" href="/van-rideshare">Van/Ride Share</a></li>
+							<li><a class="sublink-menu" href="/coach">Coach</a></li>
+							<li><a class="sublink-menu" href="/plane">Plane</a></li>
+							<li><a class="sublink-menu" href="/airport-transfers">Airport Transfers</a></li>
+							<li><a class="sublink-menu" href="/village-shuttle">Village Shuttle</a></li>
+							<li><a class="sublink-menu" href="/carbon-calculator">Carbon Calculator</a></li>
+						</ul>
+					</div>
+
+					<div class="col-sm-6 col-lg-3 col-xl-3">
+						<span class="header-submenu__icon-box">
+							<div style="background-image: url('https://github.com/boyanq/meadows-theme/blob/main/mesa-submenu.png?raw=true')"></div>
+						</span>
+						<h6><a class="sublink-menu" href="/mesa-sessions">Mesa Sessions</a></h6>
+						<ul>
+							<li><a class="sublink-menu" href="/mesa-sessions#ffd687d3-71a2-4a6a-8e1a-6de0137c9ed3">Classes</a></li>
+							<li><a class="sublink-menu" href="/mesa-sessions#0da7eeb8-da4d-458a-87bc-4169aa4e3a9c">Workshops</a></li>
+							<li><a class="sublink-menu" href="/mesa-sessions#6821f2eb-4edc-45e1-a00b-c10ef4d40300">Talks</a></li>
+							<li><a class="sublink-menu" href="/mesa-sessions#84a7a1d0-8704-4bb1-a7f1-f5038cb9d584">Ceremonies</a></li>
+							<li><a class="sublink-menu" href="/products/mesa-wellness">Massages</a></li>
+						</ul>
+					</div>
+
+					<div class="col-sm-6 col-lg-3 col-xl-3">
+						<span class="header-submenu__icon-box">
+							<div style="background-image: url('https://github.com/boyanq/meadows-theme/blob/main/experiences-submenu.png?raw=true')"></div>
+						</span>
+						<h6>Get in Touch</h6>
+						<ul>
+							<!--<li><a class="sublink-menu" href="/book#spa">Mesa wellness</a></li>-->
+							<li><a class="sublink-menu" href="/contact-us">Contact us</a></li>
+							<li><a class="sublink-menu" href="/faq">FAQ</a></li>							
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div data-menu="sub3" class="header-submenu-item">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6 col-lg-3 col-xl-3">
+						<span class="header-submenu__icon-box">
+							<div style="background-image: url('https://github.com/boyanq/meadows-theme/blob/main/act-now-submenu.png?raw=true')"></div>
+						</span>
+						<h6>Act now</h6>
+						<ul>
+							<li><a href="/act-now#WASTE_DOES_NOT_EXIST">Permaculture</a></li>
+							<li><a href="/act-now#LET%E2%80%99S_GET_ZERO-WASTED">Zero Waste Kit</a></li>
+							<li><a href="/act-now#OUR_ONE_AND_ONLY_FOUNDATION">Samo Terra Foundation</a></li>
+							<li><a href="/act-now#LEAF_YOUR_TRACE">Plant a Tree</a></li>
+							<li><a href="/act-now#REBELS_WITHOUT_A_PAUSE">Brothers & Sisters</a></li>
+							<li><a href="/act-now#THE_FOOTPRINT_OF_FLYING">The Greenest Route</a></li>
+						</ul>
+					</div>
+
+					<div class="col-sm-6 col-lg-3 col-xl-3">
+						<span class="header-submenu__icon-box">
+							<div style="background-image: url('https://github.com/boyanq/meadows-theme/blob/main/join-us-submenu.png?raw=true')"></div>
+						</span>
+						<h6>Join us</h6>
+						<ul>
+							<li><a href="/join-us">MITM Volunteers</a></li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<!-- END Header Submenu -->
+
+	<span class="header-submenu-space"> &nbsp; </span>	
+
+	<!-- BEGIN Close Button / Gray BG -->
+	<span class="js-submenu-close header-wrap__header-submenu__close-submenu"></span>
+	<!-- END Close Button / Gray BG -->
+</header>

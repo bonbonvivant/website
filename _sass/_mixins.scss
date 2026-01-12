@@ -1,0 +1,101 @@
+@mixin transition-all()
+{
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+@mixin background-cover()
+{
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+@mixin button-variant($color, $background, $border, $text-stroke)
+{
+	color: $color;
+	background-color: $background;
+	border-color: $border;
+	-webkit-text-stroke: 0px $text-stroke;
+	@include transition-all;
+
+	&:hover,
+	&:focus,
+	&.focus,
+	&:active,
+	&.active,
+	.open > .dropdown-toggle & {
+		color: $color;
+		background-color: darken($background, 5%);
+    	border-color: lighten($border, 70%);
+	}
+	&:active,
+	&.active,
+	.open > .dropdown-toggle & {
+		background-image: none;
+	}
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		&,
+		&:hover,
+		&:focus,
+		&.focus,
+		&:active,
+		&.active {
+			background-color: $background;
+			border-color: $border;
+		}
+	}
+
+	.badge {
+		color: $background;
+		background-color: $color;
+	}
+}
+
+@mixin sans-serif-font()
+{
+	font-family: "phosphatepro-solid",sans-serif
+}
+
+@mixin serif-font()
+{
+	font-family: "phosphatepro-solid",sans-serif
+}
+
+@mixin p-font()
+{
+	font-family: "dm-sans", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+@mixin heading-font()
+{
+	font-family: "flegrei", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+@mixin lemongrass-font()
+{
+	font-family: "lemongrass-script", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Genty';
+	src: url('fonts/Genty.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Genty';
+	src: url('fonts/GentyDemo-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}

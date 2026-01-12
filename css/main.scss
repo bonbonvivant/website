@@ -1,0 +1,53 @@
+---
+---
+
+@charset "utf-8";
+
+// Example Defaults
+
+$base-font-family: "Poppins", sans-serif;
+
+$base-font-size:   20px;
+// $small-font-size:  $base-font-size * 0.875;
+// $base-line-height: 1.5;
+
+// $spacing-unit:     30px;
+
+// $text-color:       #111;
+// $background-color: #fdfdfd;
+// $brand-color:      #2a7ae2;
+
+// $grey-color:       #828282;
+// $grey-color-light: lighten($grey-color, 40%);
+// $grey-color-dark:  darken($grey-color, 25%);
+
+// // Width of the content area
+// $content-width:    800px;
+
+// $on-palm:          600px;
+// $on-laptop:        800px;
+
+// Using media queries with like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+
+// variables.less
+$theme-primary: #ff6040;
+$theme-yellow: #fdec12;
+$theme-primary-border: #3B3539;
+$theme-secondary: #5391b0;
+$theme-dark: #5391b0;
+$theme-light: #eff8f7;
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "mixins",
+        "base"
+;
+
+
+//--- test run
