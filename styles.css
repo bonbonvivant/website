@@ -1,0 +1,477 @@
+/* Import Hoss Round Font */
+@import url('https://fonts.cdnfonts.com/css/hoss-round');
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Hoss Round', sans-serif;
+    background-color: #fff2d9;
+    overflow-x: hidden;
+}
+
+/* Homepage Container */
+.homepage {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fff2d9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Header */
+.header {
+    width: 100%;
+    background-color: #fff2d9;
+}
+
+.header-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+}
+
+.header-content {
+    display: flex;
+    gap: 208px;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 20px 39px 0;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.banner {
+    height: 96px;
+    width: 410px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+/* Container Sections */
+.container {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 64px 0;
+}
+
+.container-hero {
+    background-color: #ecdec3;
+}
+
+.container-product {
+    background-color: #fff2d9;
+}
+
+/* Content Areas */
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 64px;
+}
+
+.content-hero {
+    width: 100%;
+    max-width: 1340px;
+    padding-right: 96px;
+}
+
+.content-product {
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Person Image */
+.person-image {
+    flex: 1;
+    min-width: 0;
+    min-height: 1px;
+    aspect-ratio: 2645 / 1516;
+    position: relative;
+}
+
+.person-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+/* Hero Text */
+.hero-text {
+    flex: 1;
+    min-width: 0;
+    min-height: 1px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.hero-title {
+    font-family: 'Hoss Round', sans-serif;
+    font-weight: 900;
+    font-size: 70px;
+    color: #d73f4c;
+    text-shadow: -2px 2px 0px #6d4344;
+    line-height: 0.9;
+    width: min-content;
+    min-width: 100%;
+}
+
+.hero-subtitle {
+    font-family: 'Hoss Round', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    color: #6d4344;
+    line-height: 1.25;
+    width: min-content;
+    min-width: 100%;
+}
+
+.hero-subtitle p {
+    margin-bottom: 1px;
+}
+
+/* Form */
+.form {
+    display: flex;
+    gap: 8.75px;
+    height: 40px;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.email-field {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.email-field input {
+    width: 306.207px;
+    height: 40px;
+    background-color: #f7f7f9;
+    border: 0.958px solid #3b3539;
+    border-radius: 12.5px;
+    padding: 0 18px;
+    font-family: 'Hoss Round', sans-serif;
+    font-size: 15.333px;
+    color: #3b3539;
+    letter-spacing: 0.9583px;
+    text-transform: lowercase;
+}
+
+.email-field input::placeholder {
+    color: #3b3539;
+    opacity: 1;
+}
+
+/* Buttons */
+.button {
+    height: 40px;
+    border-radius: 12.5px;
+    border: 0.958px solid;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1.379px;
+    font-family: 'Hoss Round', sans-serif;
+    text-transform: uppercase;
+    transition: opacity 0.2s;
+}
+
+.button:hover {
+    opacity: 0.9;
+}
+
+.button-primary {
+    width: 168.276px;
+    background-color: #ffd661;
+    border-color: #3b3539;
+    color: #6e4445;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.button-secondary {
+    width: 186px;
+    height: 44px;
+    background-color: #d73f4c;
+    border-color: #a94149;
+    color: #ecdec3;
+    font-weight: 700;
+    font-size: 24.916px;
+}
+
+/* Product Section */
+.product-image {
+    width: 320px;
+    height: 320px;
+    border-radius: 16px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    pointer-events: none;
+}
+
+.product-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.product-titles {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.product-title {
+    font-family: 'Hoss Round', sans-serif;
+    font-weight: 900;
+    font-size: 48px;
+    color: #f2bd26;
+    text-shadow: -2px 2px 0px #6d4344;
+    line-height: 0.9;
+    width: 662px;
+    max-width: 100%;
+}
+
+.product-subtitle {
+    font-family: 'Hoss Round', sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    color: #6d4344;
+    line-height: 0.9;
+    width: 662px;
+    max-width: 100%;
+}
+
+.product-description {
+    font-family: 'Hoss Round', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #6d4344;
+    line-height: 1.25;
+    width: 662px;
+    max-width: 100%;
+}
+
+/* Decorative Head */
+.decorative-head {
+    position: absolute;
+    left: 1259px;
+    top: 389px;
+    width: 192px;
+    height: 193px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.decorative-head img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: rotate(180deg) scaleY(-1);
+}
+
+/* Image Bar Footer */
+.image-bar {
+    width: 100%;
+    background-color: #ecdec3;
+}
+
+.image-bar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 497px;
+    width: 100%;
+}
+
+.image-bar-content img {
+    width: 270px;
+    height: 123px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1440px) {
+    .decorative-head {
+        left: calc(100% - 181px);
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .content-hero {
+        max-width: 1100px;
+        padding-right: 48px;
+    }
+    
+    .content-product {
+        max-width: 1000px;
+    }
+    
+    .decorative-head {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .hero-title {
+        font-size: 56px;
+    }
+    
+    .hero-subtitle {
+        font-size: 20px;
+    }
+    
+    .product-title {
+        font-size: 40px;
+    }
+    
+    .product-subtitle {
+        font-size: 28px;
+    }
+    
+    .product-description {
+        font-size: 18px;
+    }
+    
+    .content {
+        gap: 48px;
+    }
+    
+    .content-hero {
+        padding-right: 32px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        gap: 32px;
+    }
+    
+    .content-hero {
+        padding-right: 0;
+        padding: 0 24px;
+    }
+    
+    .content-product {
+        padding: 0 24px;
+    }
+    
+    .hero-title {
+        font-size: 48px;
+    }
+    
+    .hero-subtitle {
+        font-size: 18px;
+    }
+    
+    .form {
+        flex-wrap: wrap;
+        height: auto;
+        gap: 12px;
+    }
+    
+    .email-field input {
+        width: 100%;
+    }
+    
+    .button-primary {
+        width: 100%;
+    }
+    
+    .product-title {
+        font-size: 36px;
+        width: 100%;
+    }
+    
+    .product-subtitle {
+        font-size: 24px;
+        width: 100%;
+    }
+    
+    .product-description {
+        font-size: 16px;
+        width: 100%;
+    }
+    
+    .container {
+        padding: 48px 0;
+    }
+    
+    .image-bar-content {
+        padding: 32px 24px;
+    }
+    
+    .image-bar-content img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .banner {
+        width: 100%;
+        max-width: 410px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-title {
+        font-size: 36px;
+    }
+    
+    .hero-subtitle {
+        font-size: 16px;
+    }
+    
+    .product-title {
+        font-size: 28px;
+    }
+    
+    .product-subtitle {
+        font-size: 20px;
+    }
+    
+    .product-description {
+        font-size: 14px;
+    }
+    
+    .header-content {
+        padding: 20px 20px 0;
+    }
+}
