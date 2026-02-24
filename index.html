@@ -51,12 +51,12 @@
                     <p class="product-description">
                         Welcome to The Good Life
                     </p>
-                    <a
-                    href="https://buy.stripe.com/3cI8wIafU5Nl4UeeTO2sM01"
-                    class="button button-order"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >
+                    <a 
+                    href="#" 
+                    class="button button-order" 
+                    id="open-bundle-modal" 
+                    aria-haspopup="dialog" 
+                    aria-controls="bundle-modal">
                         ORDER HERE
                     </a>
                 </div>
@@ -133,5 +133,61 @@
             </div>
         </footer>
     </div>
+
+    <!-- Bundle Modal -->
+    <div class="modal-overlay" id="bundle-modal" role="dialog" aria-modal="true" aria-labelledby="bundle-modal-title" hidden>
+        <div class="modal-card" role="document">
+            <div class="modal-header">
+            <h2 class="modal-title" id="bundle-modal-title">Choose your bundle</h2>
+            <button class="modal-close" type="button" id="close-bundle-modal" aria-label="Close modal">✕</button>
+            </div>
+
+            <div class="bundle-grid">
+            <!-- Box of 5 -->
+            <a class="bundle-card" href="https://buy.stripe.com/8x2bIU3Rwa3B5YiaDy2sM02" target="_blank" rel="noopener noreferrer">
+                <div class="bundle-top">
+                <div class="bundle-name">Box of 5</div>
+                <div class="bundle-price">€37,50</div>
+                </div>
+                <div class="bundle-sub">€7,50 / bar</div>
+                <div class="bundle-cta">Choose 5</div>
+            </a>
+
+            <!-- Box of 10 (Most popular) -->
+            <a class="bundle-card bundle-card--popular" href="https://buy.stripe.com/3cIdR20FkgrZfySeTO2sM03" target="_blank" rel="noopener noreferrer">
+                <div class="bundle-badge">Most popular</div>
+                <div class="bundle-top">
+                <div class="bundle-name">Box of 10</div>
+                <div class="bundle-price">€72,00</div>
+                </div>
+                <div class="bundle-sub">€7,20 / bar</div>
+                <div class="bundle-cta">Choose 10</div>
+            </a>
+
+            <!-- Box of 30 -->
+            <a class="bundle-card" href="https://buy.stripe.com/7sY14g87Ma3B9au8vq2sM04" target="_blank" rel="noopener noreferrer">
+                <div class="bundle-top">
+                <div class="bundle-name">Box of 30</div>
+                <div class="bundle-price">€207,00</div>
+                </div>
+                <div class="bundle-sub">€6,90 / bar</div>
+                <div class="bundle-cta">Choose 30</div>
+            </a>
+
+            <!-- Box of 50 -->
+            <a class="bundle-card" href="https://buy.stripe.com/5kQ28k2NsdfN2M6bHC2sM05" target="_blank" rel="noopener noreferrer">
+                <div class="bundle-top">
+                <div class="bundle-name">Box of 50</div>
+                <div class="bundle-price">€330,00</div>
+                </div>
+                <div class="bundle-sub">€6,60 / bar</div>
+                <div class="bundle-cta">Choose 50</div>
+            </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="bundle-modal.js" defer></script>
+
 </body>
 </html>
