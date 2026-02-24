@@ -44,9 +44,10 @@ body {
     gap: 208px;
     align-items: flex-end;
     justify-content: center;
-    padding: 20px 39px 0;
+    padding-top: 39px;
     width: 100%;
     max-width: 1440px;
+    border-bottom: 1px solid #c9a18c;
 }
 
 .banner {
@@ -66,7 +67,7 @@ body {
 /* Container Sections */
 .container {
     width: 100%;
-    max-width: 1440px;
+    max-width: none;           /* allow backgrounds to span full width */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -205,28 +206,63 @@ body {
     opacity: 0.9;
 }
 
-.button-primary {
+.button-secondary {
     width: 168.276px;
     background-color: #ffd661;
     border-color: #3b3539;
     color: #6e4445;
-    font-weight: 900;
-    font-size: 20px;
+    font-weight: 800;
+    font-size: 18px;
 }
 
-.button-secondary {
-    width: 186px;
-    height: 44px;
-    background-color: #d73f4c;
-    border-color: #a94149;
-    color: #ecdec3;
-    font-weight: 700;
-    font-size: 24.916px;
+.button-primary {
+    width: 168.276px;
+    background-color: #ff990b;
+    border-color: #3b3539;
+    color: #6e4445;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+/* Button variants */
+.button-order {
+  width: 168.276px;
+  background-color: #ff990b; /* CTA */
+  border-color: #3b3539;
+  color: #6e4445;  
+  font-weight: 800;
+  font-size: 18px;
+
+  text-decoration: none; /* no underline */
+}
+
+.button-order:hover,
+.button-order:focus-visible {
+  text-decoration: none;
+}
+
+/* Keep JOIN THE LIST as orange (existing look) */
+.button-join {
+  width: 168.276px;
+  background-color: #f3be27;
+  border-color: #3b3539;
+  color: #6e4445;
+  font-weight: 800;
+  font-size: 18px;
+
+  text-decoration: none; /* safety */
+}
+
+/* Button variants */
+
+.button-order:hover,
+.button-order:focus-visible {
+  text-decoration: none;
 }
 
 /* Product Section */
 .product-image {
-    width: 320px;
+    width: 512px;
     height: 320px;
     border-radius: 16px;
     flex-shrink: 0;
@@ -258,8 +294,8 @@ body {
 .product-title {
     font-family: 'Hoss Round', sans-serif;
     font-weight: 900;
-    font-size: 48px;
-    color: #f2bd26;
+    font-size: 34px;
+    color: #d73f4c;
     text-shadow: -2px 2px 0px #6d4344;
     line-height: 0.9;
     width: 662px;
@@ -268,8 +304,8 @@ body {
 
 .product-subtitle {
     font-family: 'Hoss Round', sans-serif;
-    font-weight: 500;
-    font-size: 32px;
+    font-weight: 700;
+    font-size: 18px;
     color: #6d4344;
     line-height: 0.9;
     width: 662px;
@@ -279,7 +315,7 @@ body {
 .product-description {
     font-family: 'Hoss Round', sans-serif;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 16px;
     color: #6d4344;
     line-height: 1.25;
     width: 662px;
@@ -288,21 +324,22 @@ body {
 
 /* Decorative Head */
 .decorative-head {
-    position: absolute;
-    left: 1259px;
+    position: fixed;     /* stick to viewport edge */
+    right: 0;            /* always hug the right side */
     top: 389px;
     width: 192px;
     height: 193px;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10;
+    pointer-events: none;
 }
 
 .decorative-head img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transform: rotate(180deg) scaleY(-1);
+    object-fit: fill;
 }
 
 /* Image Bar Footer */
@@ -435,6 +472,10 @@ body {
         padding: 48px 0;
     }
     
+    .container-product {
+        padding: 0px 0 48px;
+    }
+
     .image-bar-content {
         padding: 32px 24px;
     }
@@ -470,8 +511,88 @@ body {
     .product-description {
         font-size: 14px;
     }
-    
-    .header-content {
-        padding: 20px 20px 0;
-    }
+}
+
+
+/* Mailchimp inline messages + states */
+.form-message {
+  width: 100%;
+  margin-top: 8px;
+  font-family: 'Hoss Round', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.form-message--error {
+  color: #d73f4c;
+}
+
+.form-message--success {
+  color: #6e4445;
+}
+
+.form.is-error .email-field input {
+  border-color: #d73f4c;
+}
+
+.form.is-success .email-field input {
+  border-color: #6e4445;
+}
+
+.button.is-loading {
+  opacity: 0.75;
+  cursor: progress;
+}
+
+/* Stack email + messages without affecting the button */
+.email-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Keep input + button aligned even when message shows */
+.form {
+  position: relative;
+  align-items: center;     /* was flex-end; prevents odd vertical shifting */
+  height: 40px;            /* your design height */
+  padding-bottom: 28px;    /* reserves space for message below (doesn't push UP) */
+}
+
+/* Message is out-of-flow so it doesn't affect layout of input/button */
+.form-message {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 6px);   /* below the row */
+  width: 100%;
+  margin: 0;
+
+  font-family: 'Hoss Round', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.form-message--success {
+  color: #6e4445;
+}
+
+.form.is-error .email-field input {
+  border-color: #d73f4c;
+}
+
+.form.is-success .email-field input {
+  border-color: #6e4445;
+}
+
+/* Prevent button wrapping / thinning */
+.button {
+  white-space: nowrap;
+  padding: 0 14px; /* your old padding was ~1px and caused weird shrink/wrap */
+}
+
+.button.is-loading {
+  opacity: 0.75;
+  cursor: progress;
 }

@@ -32,47 +32,94 @@
                 </div>
             </div>
         </header>
-
-        <!-- Hero Section -->
-        <section class="container container-hero">
-            <div class="content content-hero">
-                <div class="person-image">
-                    <img src="images/person.png" alt="Person Holding Arms Out">
-                </div>
-                <div class="hero-text">
-                    <h1 class="hero-title">Coming soon!</h1>
-                    <div class="hero-subtitle">
-                        <p>Limited drops, festival collabs,</p>
-                        <p>and experimental flavors.</p>
-                    </div>
-                    <form class="form">
-                        <div class="email-field">
-                            <input type="email" placeholder="Email ADDRESS*" required>
-                        </div>
-                        <button type="submit" class="button button-primary">join the list</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
+        
         <!-- Product Section -->
         <section class="container container-product">
             <div class="content content-product">
                 <div class="product-image">
-                    <img src="images/product.png" alt="Bon Bon Vivant Chocolate Bar">
+                    <img src="images/product-alt.jpg" alt="Bon Bon Vivant Chocolate Bar">
                 </div>
                 <div class="product-text">
                     <div class="product-titles">
-                        <h2 class="product-title">Bon Bon Vivant</h2>
-                        <h3 class="product-subtitle">chocolate bar 90gr</h3>
+                        <h1 class="product-title">Bon Bon Vivant Chocolate</h1>
+                        <h4 class="product-subtitle">Dark chocolate: 70% cacao<br>
+5 pieces: 40 grams total</h4>
                     </div>
                     <p class="product-description">
-                        We make chocolate and we create worlds at special festivals. We share the knowledge of the energetic Amazonian leaf Guayusa, infuse it with damn good music and mix in refined, edgy performances.
+                        Our Guayusa Chocolate Bar is vegan and delivers focus and energy in a kind, smooth way. A healthy alternative to conventional energy boosters like coffee as it combines the natural nutrition of guayusa and cacao. No jitters, no crash, just clear focus and happy vibes for daily workflows, long nights, and never ending festivals.
                     </p>
-                    <button class="button button-secondary">Order now</button>
+                    <p class="product-description">
+                        Welcome to The Good Life
+                    </p>
+                    <a
+                    href="https://buy.stripe.com/3cI8wIafU5Nl4UeeTO2sM01"
+                    class="button button-order"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                        ORDER HERE
+                    </a>
                 </div>
             </div>
         </section>
+        
+        <!-- Coming Soon Section -->
+        <section class="container container-hero">
+            <div class="content content-hero">
+                <div class="person-image">
+                <img src="images/person.png" alt="Person Holding Arms Out" />
+                </div>
+
+                <div class="hero-text">
+                <h2 class="hero-title">Coming soon!</h2>
+
+                <div class="hero-subtitle">
+                    <p>Limited drops, festival collabs,</p>
+                    <p>and experimental flavors.</p>
+                </div>
+
+                <!-- Mailchimp AJAX (JSONP) form -->
+                <form
+                    class="form"
+                    id="mc-form"
+                    data-mailchimp-action="https://bonbonvivant.us22.list-manage.com/subscribe/post?u=71400ee0a6ad9e7826fa7f668&amp;id=207d1558b5&amp;f_id=0091c2e1f0"
+                    novalidate
+                    >
+                    <div class="email-field">
+                        <input
+                        type="email"
+                        name="EMAIL"
+                        id="mce-EMAIL"
+                        placeholder="Email ADDRESS*"
+                        required
+                        autocomplete="email"
+                        />
+                    </div>
+
+                    <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                        <input
+                        type="text"
+                        name="b_71400ee0a6ad9e7826fa7f668_207d1558b5"
+                        tabindex="-1"
+                        value=""
+                        autocomplete="off"
+                        />
+                    </div>
+
+                    <button type="submit" class="button button-join" id="mc-submit">
+                        JOIN THE LIST
+                    </button>
+
+                    <!-- message sits under BOTH; positioned via CSS -->
+                    <p class="form-message form-message--success" id="mc-success" hidden></p>
+                    <p class="form-message form-message--error" id="mc-error" hidden></p>
+                    </form>
+
+                    <script src="mailchimp-signup.js" defer></script>
+                </div>
+            </div>
+        </section>
+
 
         <!-- Decorative Head -->
         <div class="decorative-head">
