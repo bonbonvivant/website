@@ -1,5 +1,35 @@
-/* Import Hoss Round Font */
-@import url('https://fonts.cdnfonts.com/css/hoss-round');
+/* Hoss Round — self-hosted */
+@font-face {
+    font-family: 'Hoss Round';
+    src: url('fonts/Hoss_Round_Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Hoss Round';
+    src: url('fonts/Hoss_Round_Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Hoss Round';
+    src: url('fonts/Hoss_Round_Heavy.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Hoss Round';
+    src: url('fonts/Hoss_Round_Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
 
 /* Reset and Base Styles */
 * {
