@@ -322,6 +322,59 @@ body {
     max-width: 100%;
 }
 
+/* About Section */
+.container-about {
+    background-color: #fff2d9;
+}
+
+.content-about {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 24px;
+    gap: 64px;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: 'Hoss Round', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #6d4344;
+    line-height: 1.45;
+}
+
+.about-video {
+    flex: 1;
+    min-width: 0;
+    aspect-ratio: 16 / 9;
+}
+
+.about-video iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    border: 0.958px solid #3b3539;
+}
+
+@media screen and (max-width: 768px) {
+    .content-about {
+        flex-direction: column-reverse!important;
+        padding: 0 24px;
+    }
+
+    .about-text {
+        font-size: 16px;
+    }
+
+    .about-video {
+        width: 100%;
+    }
+}
+
 /* Decorative Head */
 .decorative-head {
     position: fixed;     /* stick to viewport edge */
