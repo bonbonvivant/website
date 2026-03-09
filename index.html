@@ -36,8 +36,18 @@
         <!-- Product Section -->
         <section class="container container-product">
             <div class="content content-product">
-                <div class="product-image">
-                    <img src="images/product-alt.jpg" alt="Bon Bon Vivant Chocolate Bar">
+                <div class="product-gallery">
+                    <div class="gallery-main" id="gallery-main" role="button" tabindex="0" aria-label="View fullscreen">
+                        <img src="images/product.jpg" alt="Bon Bon Vivant Chocolate Bar" id="gallery-main-img">
+                    </div>
+                    <div class="gallery-thumbs">
+                        <button class="gallery-thumb active" data-src="images/product.jpg"><img src="images/product.jpg" alt=""></button>
+                        <button class="gallery-thumb" data-src="images/product-img-1.jpg"><img src="images/product-img-1.jpg" alt=""></button>
+                        <button class="gallery-thumb" data-src="images/product-img-2.jpg"><img src="images/product-img-2.jpg" alt=""></button>
+                        <button class="gallery-thumb" data-src="images/product-img-3.jpg"><img src="images/product-img-3.jpg" alt=""></button>
+                        <button class="gallery-thumb" data-src="images/product-img-4.jpg"><img src="images/product-img-4.jpg" alt=""></button>
+                        <button class="gallery-thumb" data-src="images/product-img-5.jpg"><img src="images/product-img-5.jpg" alt=""></button>
+                    </div>
                 </div>
                 <div class="product-text">
                     <div class="product-titles">
@@ -205,6 +215,15 @@
     </div>
 
     <script src="bundle-modal.js" defer></script>
+    <script src="gallery.js" defer></script>
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" hidden>
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close">✕</button>
+        <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous image">‹</button>
+        <img class="lightbox-img" id="lightbox-img" src="" alt="Product image">
+        <button class="lightbox-next" id="lightbox-next" aria-label="Next image">›</button>
+    </div>
 
 </body>
 </html>
