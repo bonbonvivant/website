@@ -923,31 +923,31 @@ ul { list-style: none; }
         max-width: none;
     }
 
-    .hero-starburst { width: 72%; left: 0.5%; top: 11%; }
+    .hero-starburst { width: 72%; left: 50%; transform: translateX(-50%); top: 11%; }
 
     .hero-scene {
-        left: -37%;
-        top: 19%;
-        width: 147%;
-        transform: none;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 11%;
+        width: 187%;
     }
 
     .hi { display: block; }
-    .hi-trumpet     { left: -51%;  top: 47%;   width: 33%;   }
-    .hi-yellow-face { left: -23%;  top: 63%;   width: 18.5%; }
-    .hi-pale-face   { left: -8%;   top: 65%;   width: 11%;   }
-    .hi-teardrop    { left: -31%;  top: 60%;   width: 4.7%;  }
-    .hi-ballstack   { left: -2%;   top: 63%;   width: 12%;   }
-    .hi-redblob     { left: -2%;   top: 78%;   width: 34%;   }
-    .hi-duo         { left: 13%;   top: 60%;   width: 14.5%; }
-    .hi-ruffle      { left: 32%;   top: 63%;   width: 34%;   }
-    .hi-clover      { left: 60.5%; top: 67.5%; width: 6.8%;  }
-    .hi-lumps       { left: 72.5%; top: 71%;   width: 20%;   }
-    .hi-vase        { left: 105%;  top: 45%;   width: 33%;   }
-    .hi-choctower   { left: 136%;  top: 58%;   width: 7.6%;  }
-    .hi-chase       { left: 134%;  top: 63%;   width: 76%;   }
-    .hi-bowling     { left: 164%;  top: 71%;   width: 2.4%;  }
-    .hi-chick       { left: 103%;  top: 68%;   width: 15.6%; }
+    .hi-trumpet     { left: -62%;  top: 46%;   width: 42%;  }
+    .hi-yellow-face { left: -26%;  top: 67%;   width: 24%;  }
+    .hi-pale-face   { left: -7%;   top: 69%;   width: 14%;  }
+    .hi-teardrop    { left: -36%;  top: 62%;   width: 6%;   }
+    .hi-ballstack   { left: 14.5%; top: 66%;   width: 10.5%;}
+    .hi-redblob     { left: 20%;   top: 80%;   width: 19%;  }
+    .hi-duo         { left: 27%;   top: 68%;   width: 9%;   }
+    .hi-ruffle      { left: 44.5%; top: 66%;   width: 30%;  }
+    .hi-clover      { left: 80.5%; top: 72%;   width: 9%;   }
+    .hi-lumps       { left: 139%;  top: 75%;   width: 16%;  }
+    .hi-vase        { left: 147%;  top: 43.5%; width: 42%;  }
+    .hi-choctower   { left: 177%;  top: 61%;   width: 10%;  }
+    .hi-chase       { left: 174%;  top: 66%;   width: 97%;  }
+    .hi-bowling     { left: 213%;  top: 78%;   width: 3%;   }
+    .hi-chick       { left: 100%;  top: 77%;   width: 17%;  }
 
     .hero-stripe { height: 100px; }
 
