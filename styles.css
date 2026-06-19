@@ -392,65 +392,104 @@ ul { list-style: none; }
    POWER OF GUAYUSA
 ───────────────────────────────────────────────────────────── */
 .section-guayusa {
-    background: var(--orange);
-    border-top: 6px solid var(--red);
+    background: var(--red);
+    position: relative;
+    overflow: hidden;
+}
+
+.guayusa-text {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
     padding: 64px;
 }
 
-.guayusa-inner {
-    max-width: 1312px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 64px;
-}
-
-.guayusa-text { flex: 1; min-width: 0; }
-
 .guayusa-heading {
     font-weight: 800;
-    font-size: clamp(28px, 3.47vw, 50px);
-    color: var(--yellow);
+    font-size: 48px;
+    color: var(--yellow2);
     line-height: 0.9;
     text-transform: uppercase;
-    margin-bottom: 24px;
 }
 
 .guayusa-intro {
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: 900;
+    font-size: 20px;
     color: var(--text-light);
-    line-height: 1.45;
-    margin-bottom: 16px;
+    line-height: 1.25;
+    max-width: 761px;
 }
 
-.guayusa-list {
+.guayusa-bullet {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    margin-top: 8px;
+    max-width: 761px;
 }
 
-.guayusa-list li {
-    font-weight: 500;
-    font-size: 16px;
-    color: var(--text-light);
-    line-height: 1.4;
-}
-
-.guayusa-list li strong {
+.guayusa-label {
     font-weight: 900;
-    color: var(--yellow);
+    font-size: 20px;
+    color: var(--yellow2);
+    line-height: 1.25;
 }
 
-.guayusa-illus {
-    flex: 0 0 220px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
+.guayusa-desc {
+    font-weight: 900;
+    font-size: 20px;
+    color: var(--text-light);
+    line-height: 1.25;
 }
 
-.guayusa-illus img { width: 100%; }
+.guayusa-mobile-illus {
+    display: none;
+    position: relative;
+    width: 65%;
+    max-width: 300px;
+    align-self: center;
+    /* padding-top reserves vertical room for the head that floats above the body */
+    padding-top: 20%;
+    pointer-events: none;
+}
+
+.guayusa-mobile-body {
+    display: block;
+    width: 100%;
+    transform: scaleX(-1);
+}
+
+/* head sits in the space reserved by padding-top, top-right of the body */
+.guayusa-mobile-head {
+    position: absolute;
+    top: 10%;
+    right: 8%;
+    width: 44%;
+    transform: scaleX(-1);
+}
+
+.guayusa-stripe {
+    height: 141px;
+    background: var(--orange);
+    width: 100%;
+}
+
+/* 898/1440, 1074/1440 from Figma; images flipped horizontally (scaleY-1 + rotate180 = scaleX-1) */
+.guayusa-body {
+    position: absolute;
+    left: 62.36%;
+    top: 478px;
+    width: 31.53%;
+    transform: scaleX(-1);
+    pointer-events: none;
+}
+
+.guayusa-head {
+    position: absolute;
+    left: 74.58%;
+    top: 324px;
+    width: 13.47%;
+    transform: scaleX(-1);
+    pointer-events: none;
+}
 
 /* ─────────────────────────────────────────────────────────────
    OUR STAGE
@@ -812,15 +851,71 @@ ul { list-style: none; }
 .lightbox-next:hover { opacity: 0.9; }
 
 /* ─────────────────────────────────────────────────────────────
+   ANIMATIONS
+───────────────────────────────────────────────────────────── */
+@keyframes bbv-float-a {
+    0%, 100% { transform: translateY(0);    }
+    50%       { transform: translateY(-8px); }
+}
+@keyframes bbv-float-b {
+    0%, 100% { transform: translateY(0);    }
+    50%       { transform: translateY(-5px); }
+}
+@keyframes bbv-float-c {
+    0%, 100% { transform: translateY(0);    }
+    50%       { transform: translateY(-7px); }
+}
+@keyframes bbv-sway {
+    0%, 100% { transform: rotate(-2deg);  }
+    50%       { transform: rotate( 2deg); }
+}
+@keyframes bbv-pulse {
+    0%, 100% { transform: scale(1);    }
+    50%       { transform: scale(1.07); }
+}
+@keyframes bbv-star-spin {
+    to { transform: rotate(360deg); }
+}
+
+.hero-starburst {
+    transform-origin: center;
+    animation: bbv-star-spin 40s linear infinite;
+}
+
+.hi-trumpet     { animation: bbv-sway    3.4s ease-in-out infinite 0.0s; }
+.hi-yellow-face { animation: bbv-float-b 2.9s ease-in-out infinite 0.5s; }
+.hi-pale-face   { animation: bbv-float-c 3.6s ease-in-out infinite 0.9s; }
+.hi-teardrop    { animation: bbv-float-a 2.5s ease-in-out infinite 1.3s; }
+.hi-ballstack   { animation: bbv-pulse   2.7s ease-in-out infinite 0.7s; }
+.hi-redblob     { animation: bbv-float-b 4.1s ease-in-out infinite 1.6s; }
+.hi-duo         { animation: bbv-float-c 3.1s ease-in-out infinite 0.3s; }
+.hi-ruffle      { animation: bbv-float-a 3.6s ease-in-out infinite 1.0s; }
+.hi-clover      { animation: bbv-pulse   3.2s ease-in-out infinite 1.2s; }
+.hi-lumps       { animation: bbv-float-b 3.4s ease-in-out infinite 0.4s; }
+.hi-vase        { animation: bbv-sway    4.2s ease-in-out infinite 0.8s; }
+.hi-choctower   { animation: bbv-float-a 2.7s ease-in-out infinite 1.5s; }
+.hi-chase       { animation: bbv-float-c 3.9s ease-in-out infinite 0.6s; }
+.hi-bowling     { animation: bbv-pulse   2.3s ease-in-out infinite 1.1s; }
+.hi-chick       { animation: bbv-float-b 3.2s ease-in-out infinite 1.4s; }
+
+@media (prefers-reduced-motion: reduce) {
+    .hi, .hero-starburst { animation: none; }
+}
+
+/* ─────────────────────────────────────────────────────────────
    RESPONSIVE
 ───────────────────────────────────────────────────────────── */
 
 /* Tablet */
 @media (max-width: 1100px) {
     .section-product,
-    .section-guayusa,
     .section-stage,
     .footer { padding-left: 32px; padding-right: 32px; }
+
+    .guayusa-text { padding-left: 32px; padding-right: 32px; }
+    .guayusa-mobile-illus { display: block; }
+    .guayusa-body,
+    .guayusa-head { display: none; }
 
     .product-gallery { flex: 0 0 380px; }
     .gallery-main { height: 300px; border-radius: 32px; }
@@ -897,9 +992,9 @@ ul { list-style: none; }
     .btn-order { width: 100%; justify-content: center; }
 
     /* Guayusa */
-    .section-guayusa { padding: 48px 16px; }
-    .guayusa-inner { flex-direction: column; gap: 32px; }
-    .guayusa-illus { flex: none; width: 160px; margin: 0 auto; }
+    .guayusa-text { padding: 32px 16px; gap: 16px; }
+    .guayusa-intro, .guayusa-label, .guayusa-desc { font-size: 16px; }
+    .guayusa-intro, .guayusa-bullet { max-width: none; }
 
     /* Stage */
     .section-stage { padding: 48px 16px; }
@@ -915,45 +1010,53 @@ ul { list-style: none; }
 }
 
 @media (max-width: 480px) {
-    /* Hero — aspect-ratio matches the 390×540 design canvas so all % positions
-       scale correctly from 320px up to 480px regardless of actual phone width */
     .hero-inner {
         aspect-ratio: 390 / 540;
-        max-height: 580px;
+        max-height: 520px;
         max-width: none;
     }
 
-    .hero-starburst { width: 72%; left: 50%; transform: translateX(-50%); top: 11%; }
+    @keyframes bbv-star-spin-m {
+        0%   { transform: translateX(-50%) rotate(0deg);   }
+        100% { transform: translateX(-50%) rotate(360deg); }
+    }
+    .hero-starburst {
+        width: 72%; left: 50%; top: 37%;
+        transform: translateX(-50%);
+        animation-name: bbv-star-spin-m;
+    }
 
     .hero-scene {
-        left: 50%;
-        transform: translateX(-50%);
-        top: 11%;
+        left: 25%;
+        transform: translateX(-50%) scale(1.35);
+        transform-origin: center top;
+        top: 55%;
         width: 187%;
     }
 
+    /* Characters sit at the base of the hero — most off-screen left/right by design */
     .hi { display: block; }
-    .hi-trumpet     { left: -62%;  top: 46%;   width: 42%;  }
-    .hi-yellow-face { left: -26%;  top: 67%;   width: 24%;  }
-    .hi-pale-face   { left: -7%;   top: 69%;   width: 14%;  }
-    .hi-teardrop    { left: -36%;  top: 62%;   width: 6%;   }
-    .hi-ballstack   { left: 14.5%; top: 66%;   width: 10.5%;}
-    .hi-redblob     { left: 20%;   top: 80%;   width: 19%;  }
-    .hi-duo         { left: 27%;   top: 68%;   width: 9%;   }
-    .hi-ruffle      { left: 44.5%; top: 66%;   width: 30%;  }
-    .hi-clover      { left: 80.5%; top: 72%;   width: 9%;   }
-    .hi-lumps       { left: 139%;  top: 75%;   width: 16%;  }
-    .hi-vase        { left: 147%;  top: 43.5%; width: 42%;  }
-    .hi-choctower   { left: 177%;  top: 61%;   width: 10%;  }
-    .hi-chase       { left: 174%;  top: 66%;   width: 97%;  }
-    .hi-bowling     { left: 213%;  top: 78%;   width: 3%;   }
-    .hi-chick       { left: 100%;  top: 77%;   width: 17%;  }
+    .hi-trumpet     { left: -62%;  top: 69%;  width: 42%;  }
+    .hi-yellow-face { left: -26%;  top: 90%;  width: 24%;  }
+    .hi-pale-face   { left: -7%;   top: 92%;  width: 14%;  }
+    .hi-teardrop    { left: -36%;  top: 85%;  width: 6%;   }
+    .hi-ballstack   { left: 14.5%; top: 89%;  width: 10.5%;}
+    .hi-redblob     { left: 20%;   top: 93%;  width: 19%;  }
+    .hi-duo         { left: 27%;   top: 91%;  width: 9%;   }
+    .hi-ruffle      { left: 44.5%; top: 89%;  width: 30%;  }
+    .hi-clover      { left: 80.5%; top: 93%;  width: 9%;   }
+    .hi-lumps       { left: 139%;  top: 95%;  width: 16%;  }
+    .hi-vase        { left: 147%;  top: 67%;  width: 42%;  }
+    .hi-choctower   { left: 177%;  top: 84%;  width: 10%;  }
+    .hi-chase       { left: 174%;  top: 89%;  width: 97%;  }
+    .hi-bowling     { left: 213%;  top: 97%;  width: 3%;   }
+    .hi-chick       { left: 100%;  top: 96%;  width: 17%;  }
 
     .hero-stripe { height: 100px; }
 
     .bundle-grid { grid-template-columns: 1fr; }
     .story-heading { font-size: 28px; }
     .product-heading { font-size: 30px; }
-    .guayusa-heading { font-size: 22px; }
+    .guayusa-heading { font-size: 26px; }
     .stage-heading { font-size: 28px; }
 }
