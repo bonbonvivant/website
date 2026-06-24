@@ -298,6 +298,78 @@
     </div>
 </div>
 
+<!-- ═══════════════════════════════════════════ SHIPPING MODAL -->
+<div class="modal-overlay" id="shipping-modal" role="dialog" aria-modal="true" aria-labelledby="shipping-modal-title" hidden>
+    <div class="modal-card" role="document">
+        <div class="modal-header">
+            <div class="modal-header-left">
+                <button class="modal-back" type="button" id="back-to-bundles" aria-label="Back to bundle selection">← Back</button>
+                <h2 class="modal-title" id="shipping-modal-title">Choose your shipping</h2>
+            </div>
+            <button class="modal-close" type="button" id="close-shipping-modal" aria-label="Close modal">&#10005;</button>
+        </div>
+        <div class="shipping-grid">
+
+            <button class="shipping-card shipping-card--default" type="button" data-region="nl">
+                <div class="shipping-badge">Default</div>
+                <div class="shipping-map">
+                    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect width="80" height="80" rx="6" fill="#fef5ce"/>
+                        <polygon points="24,12 46,8 60,16 66,30 62,44 66,56 54,66 28,70 12,56 10,40 16,24" fill="#ffd22f" stroke="#6d4344" stroke-width="2.5" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="shipping-name">Netherlands</div>
+                <div class="shipping-cta">Select</div>
+            </button>
+
+            <button class="shipping-card" type="button" data-region="uk">
+                <div class="shipping-map">
+                    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect width="80" height="80" rx="6" fill="#fef5ce"/>
+                        <polygon points="38,6 56,12 64,26 58,42 68,58 52,72 34,74 18,64 14,46 20,28 30,12" fill="#ffd22f" stroke="#6d4344" stroke-width="2.5" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="shipping-name">England</div>
+                <div class="shipping-cta">Select</div>
+            </button>
+
+            <button class="shipping-card" type="button" data-region="de">
+                <div class="shipping-map">
+                    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect width="80" height="80" rx="6" fill="#fef5ce"/>
+                        <polygon points="20,10 56,10 66,22 64,38 68,52 58,66 44,72 26,72 16,62 12,44 16,26" fill="#ffd22f" stroke="#6d4344" stroke-width="2.5" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="shipping-name">Germany</div>
+                <div class="shipping-cta">Select</div>
+            </button>
+
+            <button class="shipping-card" type="button" data-region="fr-be-lu">
+                <div class="shipping-map">
+                    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect width="80" height="80" rx="6" fill="#fef5ce"/>
+                        <polygon points="36,6 62,10 74,32 68,60 46,76 16,70 6,46 16,20" fill="#ffd22f" stroke="#6d4344" stroke-width="2.5" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="shipping-name">France / Belgium / Luxembourg</div>
+                <div class="shipping-cta">Select</div>
+            </button>
+
+            <button class="shipping-card" type="button" data-region="eu-rest">
+                <div class="shipping-map">
+                    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect width="80" height="80" rx="6" fill="#fef5ce"/>
+                        <polygon points="42,4 56,6 66,16 72,30 74,46 68,58 72,68 54,72 38,74 22,68 10,56 6,40 10,24 20,12 32,6" fill="#ffd22f" stroke="#6d4344" stroke-width="2.5" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="shipping-name">Rest of Europe</div>
+                <div class="shipping-cta">Select</div>
+            </button>
+
+        </div>
+    </div>
+</div>
+
 <!-- ═══════════════════════════════════════════ LIGHTBOX -->
 <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" hidden>
     <button class="lightbox-close" id="lightbox-close" aria-label="Close">&#10005;</button>

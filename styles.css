@@ -801,6 +801,115 @@ ul { list-style: none; }
 }
 
 /* ─────────────────────────────────────────────────────────────
+   SHIPPING MODAL
+───────────────────────────────────────────────────────────── */
+.modal-header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.modal-back {
+    background: none;
+    border: none;
+    font-family: 'Hoss Round', sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--yellow);
+    cursor: pointer;
+    padding: 0;
+    opacity: 0.8;
+    transition: opacity 0.15s;
+    text-align: left;
+    line-height: 1;
+}
+.modal-back:hover { opacity: 1; }
+
+.shipping-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.shipping-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 12px;
+    border-radius: 16px;
+    border: 3px solid var(--brown);
+    background: var(--cream);
+    cursor: pointer;
+    font-family: 'Hoss Round', sans-serif;
+    color: inherit;
+    transition: transform 0.15s, box-shadow 0.15s;
+    text-align: center;
+}
+
+.shipping-card:hover {
+    transform: translateY(-2px);
+    box-shadow: -4px 6px 0 var(--brown);
+}
+
+.shipping-card--default {
+    border-color: var(--red);
+    box-shadow: -4px 4px 0 var(--brown);
+    padding-top: 28px;
+}
+
+.shipping-badge {
+    position: absolute;
+    top: -13px;
+    left: 12px;
+    z-index: 3;
+    background: var(--red);
+    border-radius: 999px;
+    padding: 4px 12px;
+    font-weight: 800;
+    font-size: 12px;
+    color: var(--yellow);
+    text-transform: uppercase;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+}
+
+.shipping-map {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+}
+
+.shipping-map svg { width: 100%; height: 100%; }
+
+.shipping-name {
+    font-weight: 900;
+    font-size: 13px;
+    color: var(--brown);
+    text-transform: uppercase;
+    line-height: 1.2;
+    flex: 1;
+}
+
+.shipping-cta {
+    margin-top: auto;
+    height: 44px;
+    width: 100%;
+    border-radius: 12.5px;
+    border: 4px solid var(--red);
+    background: var(--yellow);
+    color: var(--red);
+    font-family: 'Hoss Round', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+/* ─────────────────────────────────────────────────────────────
    LIGHTBOX
 ───────────────────────────────────────────────────────────── */
 .lightbox-overlay[hidden] { display: none; }
@@ -1005,8 +1114,9 @@ ul { list-style: none; }
     .footer-inner { grid-template-columns: 1fr; gap: 32px; }
     .footer-char { display: none; }
 
-    /* Bundles */
+    /* Bundles & shipping */
     .bundle-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .shipping-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
 }
 
 @media (max-width: 480px) {
@@ -1055,6 +1165,7 @@ ul { list-style: none; }
     .hero-stripe { height: 100px; }
 
     .bundle-grid { grid-template-columns: 1fr; }
+    .shipping-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
     .story-heading { font-size: 28px; }
     .product-heading { font-size: 30px; }
     .guayusa-heading { font-size: 26px; }
